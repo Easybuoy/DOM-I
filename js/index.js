@@ -50,6 +50,28 @@ navAnchor[3].textContent = siteContent.nav["nav-item-4"];
 navAnchor[4].textContent = siteContent.nav["nav-item-5"];
 navAnchor[5].textContent = siteContent.nav["nav-item-6"];
 
+// Add more elements to the navigation items
+let nav = document.querySelector('nav');
+
+let homeElement = document.createElement('a');
+homeElement.text = 'Home';
+homeElement.href = 'index.html';
+homeElement.style.color = 'green';
+
+let projectElement = document.createElement('a');
+projectElement.text = 'Projects';
+projectElement.href = '#';
+projectElement.style.color = 'green';
+
+nav.prepend(homeElement);
+nav.appendChild(projectElement);
+
+// Make nav anchor links to be color green
+let navAnchorArray = Array.from(navAnchor)
+navAnchorArray.forEach(navItem => navItem.style.color = 'green');
+
+
+
 // Cta
 let cta = document.querySelector('.cta');
 let ctaText = cta.children[0];
