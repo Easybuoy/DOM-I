@@ -75,7 +75,10 @@ navAnchorArray.forEach(navItem => navItem.style.color = 'green');
 // Cta
 let cta = document.querySelector('.cta');
 let ctaText = cta.children[0];
-ctaText.children[0].textContent = siteContent.cta["h1"];
+let adjustedCtaText = siteContent.cta["h1"].split(' ').map((word) => {
+  return `${word} <br>`;
+}).join( '');
+ctaText.children[0].insertAdjacentHTML('afterbegin', adjustedCtaText)
 ctaText.children[1].textContent = siteContent.cta["button"];
 cta.children[1].src = siteContent.cta["img-src"];
 
@@ -127,7 +130,6 @@ button.addEventListener('click', () => {
 });
 
 button.addEventListener('mouseenter', () => {
-  console.log('ccc')
   button.textContent = buttonUpdatingContent.hoverText,
   button.style.backgroundColor = buttonUpdatingContent.hoverColor
 });
