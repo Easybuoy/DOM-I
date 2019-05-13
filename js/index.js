@@ -106,3 +106,34 @@ contact[3].textContent = siteContent["contact"]["email"];
 // Footer
 let footer = document.querySelector('footer').children;
 footer[0].textContent = siteContent["footer"]["copyright"];
+
+// Stretch Goals
+const buttonUpdatingContent = {
+  text: 'Get Started',
+  backgroundColor: 'white',
+  color: 'black',
+  clickText: 'Getting Started...',
+  clickBackgroundColor: 'green',
+  clickColor: 'white',
+  hoverText: 'Want to get Started?',
+  hoverColor: 'orange',
+
+}
+let button = document.querySelector('button');
+button.addEventListener('click', () => {
+  button.textContent = buttonUpdatingContent.clickText;
+  button.style.color = buttonUpdatingContent.clickColor;
+  button.style.backgroundColor = buttonUpdatingContent.clickBackgroundColor;
+});
+
+button.addEventListener('mouseenter', () => {
+  console.log('ccc')
+  button.textContent = buttonUpdatingContent.hoverText,
+  button.style.backgroundColor = buttonUpdatingContent.hoverColor
+});
+
+button.addEventListener('mouseleave', () => {
+  button.textContent = buttonUpdatingContent.text,
+  button.style.backgroundColor = buttonUpdatingContent.backgroundColor
+  button.style.color = buttonUpdatingContent.color
+});
